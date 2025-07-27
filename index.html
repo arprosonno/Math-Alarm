@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Math Alarm Clock</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Math Alarm Clock</h1>
+
+    <div class="alarm-settings">
+      <label for="alarm-time">Select Date and Time:</label>
+      <input type="datetime-local" id="alarm-time" />
+
+      <label for="alarm-sound">Select Alarm Sound:</label>
+      <input type="file" id="alarm-sound" accept="audio/*" />
+
+      <button id="add-alarm">Add Alarm</button>
+    </div>
+
+    <div id="alarms-container"></div>
+  </div>
+
+  <template id="alarm-template">
+    <div class="alarm-box">
+      <h3 class="alarm-title"></h3>
+      <p class="countdown"></p>
+
+      <div class="alarm-active" style="display: none;">
+        <h4>Alarm is Ringing! Solve this:</h4>
+        <p class="math-problem"></p>
+        <input type="text" class="user-answer" placeholder="Enter your answer" />
+        <button class="submit-answer">Submit</button>
+        <p class="feedback"></p>
+        <audio class="alarm-audio" loop></audio>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
